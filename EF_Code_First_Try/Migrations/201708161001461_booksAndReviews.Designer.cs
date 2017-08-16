@@ -7,18 +7,18 @@ namespace EF_Code_First_Try.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class initial : IMigrationMetadata
+    public sealed partial class booksAndReviews : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(booksAndReviews));
         
         string IMigrationMetadata.Id
         {
-            get { return "201708141358225_initial"; }
+            get { return "201708161001461_booksAndReviews"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return null; }
+            get { return Resources.GetString("Source"); }
         }
         
         string IMigrationMetadata.Target

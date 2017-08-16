@@ -5,10 +5,11 @@ namespace EF_Code_First_Try
     using System.Data.Entity;
     using System.Linq;
 
-    public class BookDbContext : DbContext
+    public class Context : DbContext
     {
         public virtual DbSet<Book> Books { get; set; }
-        public BookDbContext()
+        public virtual DbSet<Review> Reviews { get; set; }
+        public Context()
             : base("name=BookDbContext")
         {
         }

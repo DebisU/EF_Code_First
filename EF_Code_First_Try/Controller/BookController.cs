@@ -1,16 +1,18 @@
 ﻿using EF_Code_First_Try.Infrastructure;
 using EF_Code_First_Try.Model;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EF_Code_First_Try.Controller
 {
-    class BookController : IBookController
+    class BookController : IDbController<Book>
     {
-        BookDbContext context = new BookDbContext();
+        Context context;
+
+        public BookController()
+        {
+            context = new Context();
+        }
 
         public List<Book> Index()
         {
@@ -57,8 +59,7 @@ namespace EF_Code_First_Try.Controller
         {
             Book _book = context.Books.Single(p => p.BookID == id);
 
-            _book.BookName = book.BookName;
-            _book.ISBN = book.ISBN;
+            _book = book;
             context.SaveChanges();
 
             return book;

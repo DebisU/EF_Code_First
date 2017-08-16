@@ -15,6 +15,8 @@ namespace EF_Code_First_Try.Model
         public string BookName { get; set; }
         public string ISBN { get; set; }
 
+        public virtual ICollection<Review> Reviews { get; set; }
+
         public override string ToString()
         {
             return "Id: " + BookID + ", Name: " + BookName + ", ISBN: " + ISBN;
